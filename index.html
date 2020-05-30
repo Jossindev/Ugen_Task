@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="list" id="list">
+        <li class="li_item">
+            <p>To Do </p>
+            <input type="checkbox" disabled>
+            <button class="del_button">Delete</button>
+        </li>
+        <li class="li_item">
+            <p>To Do </p>
+            <input type="checkbox" disabled>
+            <button class="del_button">Delete</button>
+        </li>
+        <li class="li_item">
+            <p>To Do </p>
+            <input type="checkbox" disabled>
+            <button class="del_button">Delete</button>
+        </li>
+        <li class="li_item">
+            <p>To Do </p>
+            <input type="checkbox" disabled>
+            <button class="del_button">Delete</button>
+        </li>
+    </ul>
+</body>
+<script>
+    const list = document.getElementById('list');
+    const children = list.children;
+    for (let i = 0; i < children.length; i++) {
+        const text = children[i].children[0];
+        const checkbox = children[i].children[1];
+        const button = children[i].children[2];
+        children[i].addEventListener('click', () => {
+            text.setAttribute('style', "text-decoration: line-through;");
+            const check_state = checkbox.checked;
+            checkbox.checked = !check_state;
+            console.log(`Clicked! Check State should be : ${!check_state}`);
+
+        });
+
+        button.addEventListener('click', () => {
+            button.parentNode.parentNode.removeChild(button.parentNode);
+        });
+    }
+</script>
+
+</html>

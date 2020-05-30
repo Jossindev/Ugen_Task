@@ -1,0 +1,24 @@
+.list {
+    width: 200px;
+    height: auto;
+    margin: auto;
+    list-style-type: circle;
+    background-color: bisque;
+}
+
+.li_item {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.li_item input {
+    margin: auto auto auto 10px;
+}
+
+.li_item:hover {
+    background-color: brown;
+}
